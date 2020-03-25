@@ -18,14 +18,9 @@ pipeline {
     
     stage('Build') {
       steps {
-        script {
-          sh '''
-            dockerCmd version
-            dockerCmd build -t ealebed/hellonode:latest .
-            dockerCmd image ls
-            
-          '''
-        }
+        dockerCmd 'version'
+        dockerCmd 'build -t ealebed/hellonode:latest .'
+        dockerCmd 'image ls'
       }
     }
   }
