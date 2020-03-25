@@ -1,3 +1,5 @@
+@Library('liba@master')
+
 pipeline {
   agent any
 
@@ -18,9 +20,10 @@ pipeline {
       steps {
         script {
           sh '''
-            sudo docker version
-            sudo docker build -t ealebed/hellonode:latest .
-            sudo docker image ls
+            dockerCmd version
+            dockerCmd build -t ealebed/hellonode:latest .
+            dockerCmd image ls
+            
           '''
         }
       }
