@@ -7,6 +7,13 @@ pipeline {
         checkout scm
       }
     }
+    
+    stage('ls') {
+      steps {
+        sh 'ls -la; pwd'
+      }
+    }
+    
     stage('Build') {
       steps {
         script {
