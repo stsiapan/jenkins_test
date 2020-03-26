@@ -10,6 +10,12 @@ pipeline {
       }
     }
     
+    stage('get dockerfile') {
+      steps {
+        createDockerfile
+      }
+    }
+    
     stage('Log error') {
       steps {
         logError 'panic mode!'
