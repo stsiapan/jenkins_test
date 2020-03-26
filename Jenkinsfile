@@ -11,7 +11,9 @@ pipeline {
     }
     
     stage('Log error') {
-      logError 'panic mode!'
+      steps {
+        logError 'panic mode!'
+      }
     }
     
     stage('ls') {
