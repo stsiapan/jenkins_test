@@ -10,6 +10,10 @@ pipeline {
       }
     }
     
+    stage('Log error') {
+      logError 'panic mode!'
+    }
+    
     stage('ls') {
       steps {
         sh 'ls -la; pwd'
