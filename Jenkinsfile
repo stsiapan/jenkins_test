@@ -12,7 +12,7 @@ pipeline {
     
     stage('get dockerfile') {
       steps {
-        createDockerfile
+        createDockerfile()
       }
     }
     
